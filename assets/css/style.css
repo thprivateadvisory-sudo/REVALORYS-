@@ -999,3 +999,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .page-hero__ctas .btn { width: 100%; }
 }
 .footer--compact { padding-top: 0; }
+/* Boutique : ouverture prochaine */
+.opening { max-width: 720px; margin: 10px auto 0; padding: clamp(36px, 5vw, 60px) clamp(24px, 4vw, 56px); text-align: center; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.opening__icon { width: 72px; height: 72px; margin: 0 auto 22px; border-radius: 20px; display: grid; place-items: center; background: var(--ochre-100); color: var(--ochre-600); }
+.opening__icon svg { width: 34px; height: 34px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.opening h3 { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); font-weight: 800; }
+.opening p { color: var(--muted); margin: 14px auto 0; max-width: 54ch; }
+.opening__ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; }
+@media (max-width: 620px) { .opening__ctas .btn { width: 100%; } }
+.shop__head--center { justify-content: center; text-align: center; margin-bottom: 30px; } .shop__head--center .eyebrow::after { content: ""; width: 28px; height: 2px; background: currentColor; border-radius: 2px; }

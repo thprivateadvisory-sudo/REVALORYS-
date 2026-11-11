@@ -114,7 +114,38 @@
 
   /* ---------- Catalogue ---------- */
   const grid = document.getElementById("productGrid");
-  if (grid) {
+  if (grid && DATA.produits.length === 0) {
+    /* Ouverture prochaine : aucun objet encore en ligne */
+    document.getElementById("filters")?.remove();
+    document.querySelector(".shop__notice")?.remove();
+    document.querySelectorAll(".cart-btn").forEach((b) => b.remove());
+    document.querySelector(".shop__head")?.classList.add("shop__head--center");
+    const h = document.querySelector("#catalogue .h2");
+    if (h) h.innerHTML = 'Ouverture <span class="accent">très bientôt.</span>';
+    grid.outerHTML = `<div class="opening">
+      <div class="opening__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h16l-1 12H5L4 8zM8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+      <h3>Les premiers objets arrivent.</h3>
+      <p>Nos artisans et notre atelier remettent en état les premières pièces. Chacune sera présentée ici avec le nom de la personne qui l'a réparée, la liste des réparations et son QR code.</p>
+      <div class="opening__ctas">
+        <a href="index.html#contact" class="btn btn--accent">Être prévenu de l'ouverture</a>
+        <a href="index.html#donner" class="btn btn--line">Donner un objet</a>
+      </div>
+    </div>`;
+    const people = document.getElementById("peopleGrid");
+    if (people && Object.keys(DATA.personnes).length === 0) {
+      const profils = [
+        ["AR", "Artisans retraités", "Ébénistes, tapissiers, électriciens : ils transmettent un savoir-faire de toute une vie."],
+        ["RI", "Personnes en réinsertion", "L'atelier REVALORYS leur permet d'apprendre un métier et de retrouver un emploi."],
+        ["BP", "Bénévoles passionnés", "Ils donnent un peu de leur temps pour redonner vie aux objets."],
+        ["AL", "Artisans locaux", "Des professionnels du territoire, rémunérés à chaque vente."]
+      ];
+      people.innerHTML = profils.map(([i, t, d]) => `<article class="person">
+        <span class="avatar avatar--lg">${i}</span>
+        <h3>${t}</h3>
+        <p class="person__bio">${d}</p>
+      </article>`).join("");
+    }
+  } else if (grid) {
     const filters = document.getElementById("filters");
     const used = [...new Set(DATA.produits.map((p) => p.categorie))];
     filters.innerHTML = `<button type="button" class="chip is-active" data-cat="all">Tout <span>${DATA.produits.length}</span></button>` +
