@@ -89,6 +89,16 @@ const CONFIG = {
     revealEls.forEach((el) => el.classList.add("is-in"));
   }
 
+  /* ---------- Partage ---------- */
+  document.querySelectorAll("[data-share]").forEach((btn) => btn.addEventListener("click", async () => {
+    const data = { title: document.title, text: "REVALORYS recherche un utilitaire en don pour sauver des meubles de la déchèterie.", url: location.href };
+    try {
+      if (navigator.share) { await navigator.share(data); return; }
+      await navigator.clipboard.writeText(location.href);
+      btn.textContent = "Lien copié !";
+    } catch (e) { /* partage annulé */ }
+  }));
+
   /* ---------- Formulaire ---------- */
   const form = document.getElementById("contactForm");
   if (!form) return;
@@ -96,9 +106,10 @@ const CONFIG = {
   const orgField = document.getElementById("orgField");
   const labels = {
     don: "Don / demande de collecte", rachat: "Proposition de rachat", pro: "Demande professionnelle", boutique: "Boutique", autre: "Autre demande",
-    restaurateur: "Candidature artisan restaurateur", visibilite: "Abonnement artisan visibilité", lesdeux: "Candidature restaurateur + visibilité"
+    restaurateur: "Candidature artisan restaurateur", visibilite: "Abonnement artisan visibilité", lesdeux: "Candidature restaurateur + visibilité",
+    "vehicule-particulier": "Don de véhicule (particulier)", "vehicule-entreprise": "Don de véhicule (entreprise)", "vehicule-pret": "Prêt de véhicule"
   };
-  const fieldLabels = { metier: "Métier / savoir-faire", statut: "Statut", experience: "Expérience", web: "Site / réseaux" };
+  const fieldLabels = { metier: "Métier / savoir-faire", statut: "Statut", experience: "Expérience", web: "Site / réseaux", vehicule: "Véhicule", annee: "Année", km: "Kilométrage" };
 
   const selectType = (type) => {
     const input = form.querySelector(`input[name="type"][value="${type}"]`);

@@ -695,3 +695,60 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .header__cta { padding: 10px 14px; font-size: .82rem; }
   .brand__word { width: 130px; }
 }
+
+/* =========================================================
+   DON DE VÉHICULE
+   ========================================================= */
+.van-hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
+.van { margin: 0; position: relative; z-index: 1; }
+.van svg { width: 100%; height: auto; filter: drop-shadow(0 30px 40px rgba(0,0,0,.35)); }
+.van__name { animation: namePulse 3.5s ease-in-out infinite; }
+@keyframes namePulse { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+.van figcaption { text-align: center; margin-top: 14px; color: rgba(255,255,255,.7); font-size: .92rem; font-style: italic; }
+.thanks-section { background: linear-gradient(160deg, var(--navy-900), var(--navy-800)); color: #fff; overflow: hidden; }
+.thanks-section .h2 { color: #fff; }
+.thanks-section .lead { color: rgba(255,255,255,.72); }
+.thanks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.thank { padding: 30px; border-radius: var(--radius); background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); transition: transform .35s var(--ease), background .35s; }
+.thank:hover { transform: translateY(-4px); background: rgba(255,255,255,.08); }
+.thank__num { font-family: var(--font-display); font-weight: 800; color: var(--ochre-400); font-size: 1.3rem; }
+.thank h3 { color: #fff; font-size: 1.15rem; margin: 10px 0 8px; }
+.thank p { color: rgba(255,255,255,.72); font-size: .96rem; }
+.thank em { color: var(--ochre-400); font-style: normal; font-weight: 600; }
+.thank--big { grid-column: span 3; display: grid; grid-template-columns: auto 1fr; column-gap: 26px; align-items: start; padding: clamp(30px, 4vw, 44px); background: linear-gradient(135deg, var(--ochre-500), var(--ochre-600)); border: 0; }
+.thank--big:hover { background: linear-gradient(135deg, var(--ochre-500), var(--ochre-600)); }
+.thank--big .thank__num { grid-row: span 2; font-size: 3rem; line-height: 1; color: #fff; opacity: .9; }
+.thank--big h3 { margin-top: 0; font-size: clamp(1.3rem, 1.1rem + .8vw, 1.8rem); }
+.thank--big p { color: rgba(255,255,255,.92); font-size: 1.05rem; max-width: 70ch; }
+.thank--big em { color: #fff; font-style: italic; }
+.thanks__foot { text-align: center; margin-top: 30px; color: rgba(255,255,255,.6); font-size: .9rem; }
+.timeline--4 { grid-template-columns: repeat(4, 1fr); }
+.impact__item .btn { margin-top: 18px; }
+
+/* Encart accueil */
+.vehicle-call { padding: clamp(60px, 7vw, 100px) 0 0; }
+.vehicle-call__box { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(30px, 4vw, 60px); align-items: center; padding: clamp(30px, 5vw, 60px); border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--ochre-500), var(--ochre-600)); color: #fff; position: relative; overflow: hidden; box-shadow: var(--shadow-lg); }
+.vehicle-call__box::after { content: ""; position: absolute; right: -60px; top: -60px; width: 260px; height: 260px; background: url("../img/logo-mark-white.png") center/contain no-repeat; opacity: .1; }
+.vehicle-call .eyebrow { color: #fff; }
+.vehicle-call .h2 { color: #fff; }
+.vehicle-call p.lead { color: rgba(255,255,255,.9); }
+.vehicle-call__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.vehicle-call .btn--primary { --bg: var(--navy-800); }
+.vehicle-call .btn--ghost { border-color: rgba(255,255,255,.7); }
+.vehicle-call__list { display: grid; gap: 12px; position: relative; z-index: 1; }
+.vehicle-call__list li { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border-radius: 14px; background: rgba(7,23,40,.18); font-weight: 500; }
+.vehicle-call__list .i { color: #fff; margin-top: 2px; }
+
+@media (max-width: 980px) {
+  .van-hero, .vehicle-call__box { grid-template-columns: 1fr; }
+  .thanks { grid-template-columns: repeat(2, 1fr); }
+  .thank--big { grid-column: 1 / -1; }
+  .timeline--4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .thanks, .timeline--4 { grid-template-columns: 1fr; }
+  .thank--big { grid-template-columns: 1fr; }
+  .thank--big .thank__num { grid-row: auto; font-size: 2.2rem; margin-bottom: 10px; }
+  .vehicle-call__ctas .btn { width: 100%; }
+}
+@media (min-width: 981px) { .thanks .thank:last-child { grid-column: span 2; } }
