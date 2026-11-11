@@ -107,7 +107,7 @@ const CONFIG = {
   const labels = {
     don: "Don / demande de collecte", rachat: "Proposition de rachat", pro: "Demande professionnelle", boutique: "Achat d'une pièce", autre: "Autre demande",
     restaurateur: "Candidature artisan restaurateur", visibilite: "Abonnement artisan visibilité", lesdeux: "Candidature restaurateur + visibilité",
-    "vehicule-particulier": "Don de véhicule (particulier)", "vehicule-entreprise": "Don de véhicule (entreprise)", "vehicule-pret": "Prêt de véhicule"
+    "vehicule-particulier": "Don de véhicule (particulier)", "vehicule-entreprise": "Don de véhicule (entreprise)", "vehicule-contact": "Mise en relation pour un don de véhicule"
   };
   const fieldLabels = { metier: "Métier / savoir-faire", statut: "Statut", experience: "Expérience", web: "Site / réseaux", vehicule: "Véhicule", annee: "Année", km: "Kilométrage" };
 
