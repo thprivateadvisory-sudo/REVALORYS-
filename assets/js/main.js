@@ -105,7 +105,7 @@ const CONFIG = {
   const status = document.getElementById("formStatus");
   const orgField = document.getElementById("orgField");
   const labels = {
-    don: "Don / demande de collecte", rachat: "Proposition de rachat", pro: "Demande professionnelle", boutique: "Boutique", autre: "Autre demande",
+    don: "Don / demande de collecte", rachat: "Proposition de rachat", pro: "Demande professionnelle", boutique: "Achat d'une pièce", autre: "Autre demande",
     restaurateur: "Candidature artisan restaurateur", visibilite: "Abonnement artisan visibilité", lesdeux: "Candidature restaurateur + visibilité",
     "vehicule-particulier": "Don de véhicule (particulier)", "vehicule-entreprise": "Don de véhicule (entreprise)", "vehicule-pret": "Prêt de véhicule"
   };
