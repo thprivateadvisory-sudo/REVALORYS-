@@ -159,7 +159,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 45%, var(--navy-800) 100%);
 }
 .hero__bg::before { content: ""; position: absolute; right: -6%; top: 50%; width: min(760px, 60vw); aspect-ratio: 300 / 222; transform: translateY(-50%); background: url("../img/logo-mark-white.png") center/contain no-repeat; opacity: .05; }
-.hero__bg::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px); background-size: 28px 28px; mask-image: linear-gradient(90deg, transparent, #000 60%); -webkit-mask-image: linear-gradient(90deg, transparent, #000 60%); }
 .hero__content { max-width: 1220px; }
 .hero__title {
   color: #fff; font-weight: 800; letter-spacing: -.03em;
@@ -802,7 +801,26 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .btile strong { font-size: 1rem; }
   .boutique__stamp { font-size: .72rem; padding: 10px 14px; }
 }
-.hero__layout { grid-template-columns: 1.45fr 1fr; }
+@media (min-width: 981px) { .hero__layout { grid-template-columns: 1.45fr 1fr; } }
 .hero__layout .hero__title { max-width: none; font-size: clamp(2.6rem, 1.2rem + 4.1vw, 4.9rem); }
+
+/* ---------- Hero mobile : centré, épuré ---------- */
+@media (max-width: 980px) {
+  .hero { align-items: center; padding-top: calc(var(--header-h) + 28px); }
+  .hero__bg::before { display: none; }
+  .hero__content { text-align: center; max-width: 620px; margin-inline: auto; }
+  .hero__content .eyebrow { justify-content: center; flex-wrap: wrap; font-size: .72rem; letter-spacing: .16em; line-height: 1.6; }
+  .hero__content .eyebrow::before { display: none; }
+  .hero__layout .hero__title { font-size: clamp(2.5rem, 1.6rem + 4.5vw, 3.6rem); line-height: 1.05; }
+  .hero__lead { margin-inline: auto; max-width: 40ch; }
+  .hero__ctas { justify-content: center; }
+  .hero__proofs { justify-content: center; }
+}
+@media (max-width: 620px) {
+  .hero__lead { font-size: 1.05rem; line-height: 1.6; margin-top: 20px; }
+  .hero__ctas { flex-direction: column; gap: 12px; margin-top: 30px; }
+  .hero__ctas .btn { padding: 16px 22px; justify-content: center; }
+  .hero__proofs { align-items: center; }
+}
 .boutique__stamp { top: auto; bottom: -62px; transform: translateX(-50%) rotate(-4deg); }
 .boutique__tiles { margin-bottom: 62px; }
