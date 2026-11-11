@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Objet — Boutique REVALORYS</title>
+  <meta name="description" content="Fiche d'un objet de la boutique REVALORYS : qui l'a remis en état, les réparations effectuées et son histoire.">
+  <meta name="theme-color" content="#0E2A47">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page--light">
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="REVALORYS — accueil">
+        <img class="brand__mark brand__mark--dark" src="assets/img/logo-mark.png" alt="" width="300" height="222">
+        <img class="brand__mark brand__mark--light" src="assets/img/logo-mark-white.png" alt="" width="300" height="222">
+        <img class="brand__word brand__word--dark" src="assets/img/logo-word.png" alt="REVALORYS" width="640" height="77">
+        <img class="brand__word brand__word--light" src="assets/img/logo-word-white.png" alt="" width="640" height="77">
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html#catalogue">Boutique</a>
+        <a href="boutique.html#ceux-qui-reparent">Ceux qui réparent</a>
+        <a href="artisans.html" class="nav__highlight">Artisans</a>
+        <a href="index.html#contact" class="nav__cta-mobile btn btn--accent">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <button type="button" class="cart-btn" data-cart-open aria-label="Ouvrir le panier">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l-1 12H5L4 8zM8 8V6a4 4 0 0 1 8 0v2"/></svg>
+          <span class="cart-btn__label">Panier</span>
+          <span class="cart-btn__count" data-cart-count hidden>0</span>
+        </button>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="piece">
+    <div class="container" id="productSheet">
+      <noscript><p>Activez JavaScript pour afficher la fiche de l'objet, ou <a href="boutique.html">retournez à la boutique</a>.</p></noscript>
+    </div>
+  </main>
+
+  <!-- PANIER -->
+  <div class="cart" id="cart" aria-hidden="true">
+    <div class="cart__overlay" data-cart-close></div>
+    <aside class="cart__panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart__head">
+        <h2 id="cartTitle">Votre panier</h2>
+        <button type="button" class="cart__close" data-cart-close aria-label="Fermer le panier">×</button>
+      </div>
+      <ul class="cart__items"></ul>
+      <div class="cart__checkout">
+        <p class="cart__total"><span>Total</span><b data-cart-total>0 €</b></p>
+        <form class="cart__form" id="orderForm" novalidate>
+          <fieldset class="form__type">
+            <legend>Réception</legend>
+            <div class="chips">
+              <label><input type="radio" name="reception" value="retrait" checked><span>Retrait sur rendez-vous</span></label>
+              <label><input type="radio" name="reception" value="livraison"><span>Livraison (sur devis)</span></label>
+            </div>
+          </fieldset>
+          <div class="field"><label for="o-name">Nom et prénom *</label><input id="o-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="o-email">E-mail *</label><input id="o-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="o-phone">Téléphone</label><input id="o-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="o-city">Commune</label><input id="o-city" name="city" autocomplete="address-level2"></div>
+          <div class="field"><label for="o-msg">Message</label><textarea id="o-msg" name="message" rows="3"></textarea></div>
+          <label class="consent"><input type="checkbox" name="consent" required><span>J'accepte que mes données soient utilisées pour traiter ma commande. <a href="mentions-legales.html#donnees">En savoir plus</a></span></label>
+          <button type="submit" class="btn btn--accent btn--lg btn--block">Envoyer ma commande</button>
+          <p class="cart__note">Aucun paiement n'est demandé à cette étape. Nous confirmons la disponibilité sous 48 h, puis le paiement et la remise.</p>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer footer--compact">
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> REVALORYS — La boutique</p>
+      <p><a href="boutique.html" style="text-decoration:none">Boutique</a> · <a href="mentions-legales.html" style="text-decoration:none">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/catalogue.js" defer></script>
+  <script src="assets/js/boutique.js" defer></script>
+</body>
+</html>
