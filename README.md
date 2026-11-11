@@ -12,7 +12,7 @@ Site statique (HTML / CSS / JS, sans dépendance ni build) de REVALORYS — ress
 - `assets/img/` — logo (versions couleur et blanche, fond transparent), photos
 
 ## À compléter avant la mise en ligne
-1. `assets/js/main.js` → objet `CONFIG` : e-mail, téléphone, adresse de l'atelier-boutique
+1. `assets/js/main.js` → objet `CONFIG` : e-mail, téléphone, adresse ou zone d'intervention
 2. `mentions-legales.html` → forme juridique, SIRET, siège, hébergeur
 3. `assets/img/qr-piece-exemple.svg` → QR code de démonstration (pointe vers `/piece-exemple.html` sur revalorys.fr) : à régénérer pour chaque vraie pièce
 4. `index.html` → URL canonique (`https://www.revalorys.fr/` par défaut)

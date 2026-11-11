@@ -7,7 +7,7 @@
 const CONFIG = {
   email: "contact@revalorys.fr",        // TODO : adresse e-mail définitive
   phone: "",                            // TODO : ex. "03 83 00 00 00"
-  address: "Meurthe-et-Moselle · Grand Est" // TODO : adresse complète de l'atelier-boutique
+  address: "Meurthe-et-Moselle · Grand Est" // TODO : adresse (si local) ou zone d'intervention
 };
 
 (() => {

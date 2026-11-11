@@ -22,7 +22,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/revalorys-atelier.webp" type="image/webp">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script type="application/ld+json">
@@ -73,12 +72,9 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <picture class="hero__bg">
-        <source srcset="assets/img/revalorys-atelier-800.webp 800w, assets/img/revalorys-atelier.webp 1448w" type="image/webp" sizes="100vw">
-        <img src="assets/img/revalorys-atelier.jpg" alt="Le bâtiment REVALORYS, son atelier ouvert et son véhicule de collecte" width="1448" height="1086">
-      </picture>
-      <div class="hero__shade"></div>
-      <div class="container hero__content">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__layout">
+      <div class="hero__content">
         <p class="eyebrow eyebrow--light reveal">Ressourcerie · Valorisation · Réemploi</p>
         <h1 class="hero__title reveal">Là où le déchet<br>devient <em>ressource.</em></h1>
         <p class="hero__lead reveal">Nous collectons gratuitement vos meubles, équipements et matériaux, nous les remettons en état dans notre atelier et nous leur offrons une seconde vie. Utile pour vous, utile pour le territoire.</p>
@@ -95,7 +91,24 @@
           <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Meurthe-et-Moselle & Grand Est</li>
         </ul>
       </div>
-          </section>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="loop-card loop-card--1">
+            <span class="loop-card__icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21z"/></svg></span>
+            <div><small>Étape 1</small><strong>Don collecté</strong><span>Enlèvement gratuit à domicile</span></div>
+            <em>0 €</em>
+          </div>
+          <div class="loop-card loop-card--2">
+            <span class="loop-card__icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></span>
+            <div><small>Étape 2</small><strong>Restauré à la main</strong><span>Par un artisan partenaire</span></div>
+          </div>
+          <div class="loop-card loop-card--3">
+            <span class="loop-card__icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg></span>
+            <div><small>Étape 3</small><strong>Seconde vie</strong><span>Une pièce unique, une histoire</span></div>
+            <em>♻</em>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ============ PATH CHOOSER ============ -->
     <section class="paths" id="parcours" aria-label="Comment pouvons-nous vous aider ?">
@@ -366,16 +379,19 @@
     <!-- ============ BOUTIQUE ============ -->
     <section class="section boutique" id="boutique">
       <div class="container boutique__grid">
-        <figure class="boutique__media reveal">
-          <img src="assets/img/revalorys-boutique.jpg" alt="Mobilier, cadres et objets exposés à l'entrée de l'atelier-boutique REVALORYS" width="578" height="390" loading="lazy">
-          <figcaption>L'atelier-boutique REVALORYS</figcaption>
-        </figure>
+        <div class="boutique__tiles reveal" aria-hidden="true">
+          <div class="btile btile--navy"><svg viewBox="0 0 48 48"><path d="M8 26v-6a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v6M6 26h36v8H6zM10 34v4M38 34v4M14 26v-4h20v4"/></svg><strong>Mobilier</strong></div>
+          <div class="btile btile--ochre"><svg viewBox="0 0 48 48"><path d="M24 6v6M16 12h16l4 14H12zM24 26v12M16 42h16"/></svg><strong>Déco & luminaires</strong></div>
+          <div class="btile btile--light"><svg viewBox="0 0 48 48"><path d="M18 6h12M20 6v6c-6 3-9 9-9 15 0 8 6 15 13 15s13-7 13-15c0-6-3-12-9-15V6M14 28h20"/></svg><strong>Pièces anciennes</strong></div>
+          <div class="btile btile--navy2"><svg viewBox="0 0 48 48"><path d="M14 6h20a2 2 0 0 1 2 2v34a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zM12 18h24M17 11v3M17 23v6"/></svg><strong>Électroménager</strong></div>
+          <span class="boutique__stamp">Sélectionné · Vérifié · Prix juste</span>
+        </div>
         <div class="boutique__text reveal">
           <p class="eyebrow eyebrow--light">La boutique</p>
           <h2 class="h2">Chiner, c'est choisir<br><span class="accent">une autre façon de consommer.</span></h2>
           <p class="lead">Meubles, électroménager, décoration, pièces anciennes&nbsp;: des objets sélectionnés, nettoyés et vérifiés, à prix justes. Le stock change chaque semaine — chaque visite est une découverte.</p>
           <ul class="boutique__channels">
-            <li><strong>En boutique</strong><span>Notre atelier-boutique en Meurthe-et-Moselle</span></li>
+            <li><strong>En boutique</strong><span>Notre espace de vente en Meurthe-et-Moselle</span></li>
             <li><strong>En ligne</strong><span>Nos annonces sur les principales plateformes de seconde main</span></li>
             <li><strong>En lots</strong><span>Équipement complet de bureaux, logements et structures</span></li>
           </ul>
@@ -518,7 +534,7 @@
             </li>
             <li>
               <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-              <div><span>Atelier-boutique</span><p data-config="address">Meurthe-et-Moselle · Grand Est</p></div>
+              <div><span>Zone d'intervention</span><p data-config="address">Meurthe-et-Moselle · Grand Est</p></div>
             </li>
           </ul>
         </div>
