@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buffet en chêne restauré — Fiche pièce exemple — REVALORYS</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0E2A47">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .header { top: 40px; background: rgba(250,247,242,.95); box-shadow: 0 1px 0 var(--line); }
+    .header .brand__mark--dark, .header .brand__word--dark { opacity: 1; }
+    .header .brand__mark--light, .header .brand__word--light { opacity: 0; }
+    .header .nav a:not(.btn) { color: var(--ink); }
+    .header .burger span { background: var(--ink); }
+    .demo-banner { position: fixed; inset: 0 0 auto 0; height: 40px; }
+    .piece { padding-top: calc(var(--header-h) + 80px); }
+  </style>
+</head>
+<body>
+  <div class="demo-banner">Fiche exemple — modèle de présentation d'une pièce restaurée par un artisan partenaire</div>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="REVALORYS — accueil">
+        <img class="brand__mark brand__mark--dark" src="assets/img/logo-mark.png" alt="" width="300" height="222">
+        <img class="brand__mark brand__mark--light" src="assets/img/logo-mark-white.png" alt="" width="300" height="222">
+        <img class="brand__word brand__word--dark" src="assets/img/logo-word.png" alt="REVALORYS" width="640" height="77">
+        <img class="brand__word brand__word--light" src="assets/img/logo-word-white.png" alt="" width="640" height="77">
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html#donner">Donner</a>
+        <a href="index.html#boutique">Boutique</a>
+        <a href="artisans.html">Artisans</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#contact" class="nav__cta-mobile btn btn--accent">Réserver une pièce</a>
+      </nav>
+      <div class="header__actions">
+        <a href="index.html#contact" class="btn btn--accent btn--sm header__cta">Réserver cette pièce</a>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="piece">
+    <div class="container">
+      <p class="crumbs"><a href="index.html">Accueil</a> / <a href="index.html#boutique">Boutique</a> / <a href="artisans.html">Les Mains REVALORYS</a> / Buffet en chêne</p>
+
+      <div class="piece__grid">
+        <div class="gallery">
+          <div class="ph ph--wide">
+            <div><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><b>Vidéo de restauration</b>2 min · l'avant / après raconté par l'artisan</div>
+          </div>
+          <div class="ph"><span class="ph__tag">Avant</span><div><b>Photo avant</b>La pièce à son arrivée</div></div>
+          <div class="ph ph--after"><span class="ph__tag">Après</span><div><b>Photo après</b>La pièce restaurée</div></div>
+        </div>
+
+        <div class="piece__info">
+          <p class="eyebrow">Restauré à la main · Les Mains REVALORYS</p>
+          <h1>Buffet en chêne massif, années 1950</h1>
+          <p class="piece__sub">Décapé, réparé, ciré à l'ancienne. Poignées en laiton d'origine conservées.</p>
+          <div class="piece__price"><b>350 €</b><span>Pièce unique</span></div>
+
+          <div class="artisan-card">
+            <div class="artisan-card__avatar">MD</div>
+            <div>
+              <small>Restauré par</small>
+              <strong>Michel D., ébéniste retraité</strong>
+              <p>40 ans de métier, un atelier au fond du jardin et l'envie de transmettre. 18 heures de travail sur ce buffet.</p>
+              <a href="artisans.html">Découvrir Les Mains REVALORYS →</a>
+            </div>
+          </div>
+
+          <dl class="specs">
+            <div><dt>Dimensions</dt><dd>L 160 × P 48 × H 92 cm</dd></div>
+            <div><dt>Matériau</dt><dd>Chêne massif</dd></div>
+            <div><dt>Finition</dt><dd>Cire d'abeille</dd></div>
+            <div><dt>Retrait</dt><dd>Boutique ou livraison</dd></div>
+          </dl>
+
+          <a href="index.html#contact" class="btn btn--accent btn--lg btn--block" data-subject="boutique">Réserver cette pièce</a>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story__text">
+          <p class="eyebrow">L'histoire de la pièce</p>
+          <h2 class="h2">D'un débarras à votre salon.</h2>
+          <p>Ce buffet nous a été donné lors du vidage d'une maison familiale à Lunéville. Plutôt que la déchèterie, il a été confié à Michel, qui lui a redonné son éclat d'origine.</p>
+          <ol class="story__steps">
+            <li><b>01</b><span>Don à REVALORYS lors d'un débarras</span></li>
+            <li><b>02</b><span>Confié à Michel, artisan partenaire</span></li>
+            <li><b>03</b><span>Décapage, recollage, ponçage, cire : 18 heures de travail</span></li>
+            <li><b>04</b><span>Contrôle qualité, photos et mise en vente</span></li>
+          </ol>
+        </div>
+        <aside class="qr-panel">
+          <img src="assets/img/qr-piece-exemple.svg" alt="QR code de la fiche pièce" width="180" height="180">
+          <h3>Le QR code posé sur la pièce</h3>
+          <p>En boutique, l'acheteur scanne l'étiquette et arrive sur cette page : vidéo, portrait de l'artisan, histoire de la pièce.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> REVALORYS — Les Mains REVALORYS</p>
+      <p><a href="mentions-legales.html" style="text-decoration:none">Mentions légales</a></p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

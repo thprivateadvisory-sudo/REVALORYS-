@@ -91,9 +91,14 @@ const CONFIG = {
 
   /* ---------- Formulaire ---------- */
   const form = document.getElementById("contactForm");
+  if (!form) return;
   const status = document.getElementById("formStatus");
   const orgField = document.getElementById("orgField");
-  const labels = { don: "Don / demande de collecte", rachat: "Proposition de rachat", pro: "Demande professionnelle", boutique: "Boutique", autre: "Autre demande" };
+  const labels = {
+    don: "Don / demande de collecte", rachat: "Proposition de rachat", pro: "Demande professionnelle", boutique: "Boutique", autre: "Autre demande",
+    restaurateur: "Candidature artisan restaurateur", visibilite: "Abonnement artisan visibilité", lesdeux: "Candidature restaurateur + visibilité"
+  };
+  const fieldLabels = { metier: "Métier / savoir-faire", statut: "Statut", experience: "Expérience", web: "Site / réseaux" };
 
   const selectType = (type) => {
     const input = form.querySelector(`input[name="type"][value="${type}"]`);
@@ -102,7 +107,7 @@ const CONFIG = {
   document.querySelectorAll("[data-subject]").forEach((el) => el.addEventListener("click", () => selectType(el.dataset.subject)));
 
   form.addEventListener("change", (e) => {
-    if (e.target.name === "type") {
+    if (e.target.name === "type" && orgField) {
       orgField.querySelector("label").textContent = e.target.value === "pro" ? "Organisation *" : "Organisation";
       orgField.querySelector("input").required = e.target.value === "pro";
     }
@@ -133,6 +138,7 @@ const CONFIG = {
       `E-mail : ${d.email}`,
       d.phone ? `Téléphone : ${d.phone}` : null,
       d.city ? `Commune : ${d.city}` : null,
+      ...Object.keys(fieldLabels).filter((k) => d[k]).map((k) => `${fieldLabels[k]} : ${d[k]}`),
       "",
       d.message,
       "",
