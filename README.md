@@ -21,7 +21,7 @@ Site statique (HTML / CSS / JS, sans dépendance ni build) de REVALORYS — ress
 1. `assets/js/main.js` → objet `CONFIG` : e-mail, téléphone, adresse ou zone d'intervention
 2. `mentions-legales.html` → forme juridique, SIRET, siège, hébergeur
 3. `assets/img/qr-piece-exemple.svg` → QR code de démonstration (pointe vers `/piece-exemple.html` sur revalorys.fr) : à régénérer pour chaque vraie pièce
-4. `index.html` → URL canonique (`https://www.revalorys.fr/` par défaut)
+4. Référencement : voir **`REFERENCEMENT.md`** (Search Console, Google Business Profile, Bing, annuaires). Domaine canonique : `https://revalorys.fr`.
 
 Le formulaire ouvre la messagerie du visiteur avec la demande pré-remplie (aucun serveur requis).
 Pour une réception directe, brancher un service de formulaire (Formspree, Netlify Forms…).
@@ -29,9 +29,13 @@ Pour une réception directe, brancher un service de formulaire (Formspree, Netli
 ## Boutique
 1. **Ajouter un objet** : copier un bloc de `assets/js/catalogue-exemple.js` dans `assets/js/catalogue.js`, lui donner une nouvelle `ref` (ex. `RV-0009`), et indiquer la personne qui l'a réparé (`personne`). Photo facultative : `photo: "assets/img/boutique/RV-0009.jpg"`.
 2. **Vendu / réservé** : passer `statut` à `"vendu"` ou `"reserve"`.
-3. **QR codes** : `pip install qrcode` puis `python3 tools/qr.py` (ou `python3 tools/qr.py https://www.revalorys.fr` une fois le nom de domaine actif). Imprimer `assets/img/qr/<REF>.svg` et le coller sur l'objet.
+3. **QR codes** : `pip install qrcode` puis `python3 tools/qr.py` (QR vers `https://revalorys.fr` par défaut), puis `python3 tools/sitemap.py` pour ajouter l'objet au plan du site. Imprimer `assets/img/qr/<REF>.svg` et le coller sur l'objet.
 4. **Commande** : le panier envoie la commande par e-mail (pré-remplie) ; aucun paiement n'est encaissé sur le site. Pour un paiement en ligne, créer un lien de paiement (Stripe, SumUp…) et l'ajouter à l'objet : `paiement: "https://…"`.
 5. Tant que le catalogue est vide, la page affiche « Ouverture très bientôt ». Ne publier que des personnes réelles, avec leur accord (nom, photo, vidéo).
+
+## Référencement (fichiers)
+- `robots.txt`, `sitemap.xml` (régénérer avec `tools/sitemap.py`), `llms.txt`, `site.webmanifest`, `404.html`
+- `13c0d6782f820b8f5b54095b5ad97340.txt` — clé IndexNow (Bing & co.), ne pas supprimer
 
 ## Aperçu local
 ```

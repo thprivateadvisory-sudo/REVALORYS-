@@ -1,0 +1,15 @@
+{
+  "name": "REVALORYS — Ressourcerie, valorisation & réemploi",
+  "short_name": "REVALORYS",
+  "description": "Ressourcerie solidaire en Meurthe-et-Moselle : collecte gratuite, restauration par des artisans locaux, revente de seconde main.",
+  "lang": "fr-FR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#0E2A47",
+  "icons": [
+    { "src": "/assets/img/favicon.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "/assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

@@ -15,7 +15,7 @@ from pathlib import Path
 import qrcode
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = (sys.argv[1] if len(sys.argv) > 1 else "https://thprivateadvisory-sudo.github.io/REVALORYS-").rstrip("/")
+BASE = (sys.argv[1] if len(sys.argv) > 1 else "https://revalorys.fr").rstrip("/")
 refs = re.findall(r'ref:\s*"([^"]+)"', (ROOT / "assets/js/catalogue.js").read_text(encoding="utf-8"))
 out = ROOT / "assets/img/qr"
 out.mkdir(parents=True, exist_ok=True)

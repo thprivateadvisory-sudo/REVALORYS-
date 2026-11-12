@@ -3,18 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>REVALORYS — Ressourcerie, valorisation & réemploi en Meurthe-et-Moselle</title>
-  <meta name="description" content="REVALORYS collecte gratuitement vos meubles, équipements et matériaux, les remet en état et leur donne une seconde vie. Ressourcerie solidaire en Meurthe-et-Moselle et dans le Grand Est — particuliers, entreprises, bailleurs, assurances et collectivités.">
-  <meta name="theme-color" content="#0E2A47">
-  <link rel="canonical" href="https://www.revalorys.fr/">
-
+  <title>Ressourcerie en Meurthe-et-Moselle — Collecte gratuite de meubles | REVALORYS</title>
+  <meta name="description" content="Ressourcerie solidaire en Meurthe-et-Moselle (Nancy, Lunéville, Toul…) : enlèvement gratuit de meubles et électroménager, débarras, rachat de lots et objets restaurés par des artisans locaux.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://revalorys.fr/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="REVALORYS">
+  <meta property="og:url" content="https://revalorys.fr/">
   <meta property="og:title" content="REVALORYS — Là où le déchet devient ressource">
   <meta property="og:description" content="Collecte gratuite de vos dons, restauration par des artisans locaux, revente solidaire. Ressourcerie en Meurthe-et-Moselle & Grand Est.">
-  <meta property="og:image" content="assets/img/og-revalorys.jpg">
+  <meta property="og:image" content="https://revalorys.fr/assets/img/og-revalorys.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="REVALORYS — Ressourcerie, valorisation et réemploi">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="REVALORYS — Là où le déchet devient ressource">
+  <meta name="twitter:description" content="Collecte gratuite de vos dons, restauration par des artisans locaux, revente solidaire. Ressourcerie en Meurthe-et-Moselle & Grand Est.">
+  <meta name="twitter:image" content="https://revalorys.fr/assets/img/og-revalorys.jpg">
+  <meta name="geo.region" content="FR-54">
+  <meta name="geo.placename" content="Meurthe-et-Moselle">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0E2A47">
 
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -27,14 +37,255 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "REVALORYS",
-    "description": "Ressourcerie solidaire : collecte de dons, valorisation et réemploi de mobilier, équipements et matériaux.",
-    "image": "assets/img/og-revalorys.jpg",
-    "logo": "assets/img/logo-full.png",
-    "slogan": "Là où le déchet devient ressource.",
-    "areaServed": ["Meurthe-et-Moselle", "Grand Est"],
-    "address": { "@type": "PostalAddress", "addressRegion": "Grand Est", "addressCountry": "FR" }
+    "@graph": [
+      {
+        "@type": [
+          "LocalBusiness",
+          "RecyclingCenter"
+        ],
+        "@id": "https://revalorys.fr/#organisation",
+        "name": "REVALORYS",
+        "alternateName": [
+          "Revalorys",
+          "REVALORYS Ressourcerie"
+        ],
+        "url": "https://revalorys.fr/",
+        "description": "Ressourcerie solidaire en Meurthe-et-Moselle : collecte gratuite de dons, débarras, rachat de lots, restauration par des artisans locaux et revente de mobilier, électroménager et objets de seconde main.",
+        "slogan": "Là où le déchet devient ressource.",
+        "email": "contact@revalorys.fr",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://revalorys.fr/assets/img/logo-full.png",
+          "width": 640,
+          "height": 374
+        },
+        "image": "https://revalorys.fr/assets/img/og-revalorys.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Meurthe-et-Moselle",
+          "addressCountry": "FR"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Meurthe-et-Moselle"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Grand Est"
+          },
+          {
+            "@type": "City",
+            "name": "Nancy"
+          },
+          {
+            "@type": "City",
+            "name": "Lunéville"
+          },
+          {
+            "@type": "City",
+            "name": "Toul"
+          },
+          {
+            "@type": "City",
+            "name": "Pont-à-Mousson"
+          },
+          {
+            "@type": "City",
+            "name": "Vandœuvre-lès-Nancy"
+          },
+          {
+            "@type": "City",
+            "name": "Briey"
+          },
+          {
+            "@type": "City",
+            "name": "Longwy"
+          }
+        ],
+        "knowsAbout": [
+          "Ressourcerie",
+          "Réemploi",
+          "Économie circulaire",
+          "Débarras",
+          "Restauration de meubles",
+          "Seconde main",
+          "Recyclage"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services REVALORYS",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Collecte gratuite de meubles et d'objets",
+                "areaServed": "Meurthe-et-Moselle"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Débarras de maisons et d'appartements",
+                "areaServed": "Meurthe-et-Moselle"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Rachat de lots de mobilier et d'équipements",
+                "areaServed": "Meurthe-et-Moselle"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Vidage de logements pour bailleurs sociaux",
+                "areaServed": "Meurthe-et-Moselle"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Valorisation de biens sinistrés pour les assurances",
+                "areaServed": "Meurthe-et-Moselle"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Réemploi du mobilier réformé des entreprises et collectivités",
+                "areaServed": "Meurthe-et-Moselle"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Restauration de meubles par des artisans locaux",
+                "areaServed": "Meurthe-et-Moselle"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Vente de meubles et objets de seconde main restaurés",
+                "areaServed": "Meurthe-et-Moselle"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://revalorys.fr/#site",
+        "url": "https://revalorys.fr/",
+        "name": "REVALORYS",
+        "alternateName": "Revalorys",
+        "inLanguage": "fr-FR",
+        "publisher": {
+          "@id": "https://revalorys.fr/#organisation"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://revalorys.fr/#page",
+        "url": "https://revalorys.fr/",
+        "name": "REVALORYS — Ressourcerie en Meurthe-et-Moselle",
+        "isPartOf": {
+          "@id": "https://revalorys.fr/#site"
+        },
+        "about": {
+          "@id": "https://revalorys.fr/#organisation"
+        },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://revalorys.fr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "La collecte est-elle vraiment gratuite ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. L'enlèvement des biens donnés est gratuit dès lors qu'ils peuvent être réemployés. Pour les débarras importants comprenant une part de biens non réutilisables, nous vous proposons un devis transparent avant toute intervention."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dans quelle zone intervenez-vous ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nous intervenons dans toute la Meurthe-et-Moselle (Nancy et sa métropole, Lunéville, Toul, Pont-à-Mousson, le Pays-Haut…) et dans le Grand Est. Pour les professionnels et les volumes importants, nous étudions toutes les demandes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dois-je être présent lors de l'enlèvement ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Idéalement oui, ou une personne de confiance. Pour les professionnels (bailleurs, gestionnaires), un accès peut être organisé selon les modalités prévues dans la convention."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Puis-je obtenir une attestation de don ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, sur simple demande nous vous remettons une attestation détaillant les biens donnés. Pour les entreprises, nous fournissons également une attestation de valorisation utile à votre reporting RSE."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Rachetez-vous tous les objets ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Le don reste notre mode de collecte principal. Nous proposons un rachat pour des lots sélectionnés (mobilier professionnel, équipements, pièces de caractère). Envoyez-nous des photos : nous vous répondons avec une offre ou une proposition d'enlèvement en don."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que deviennent les objets qui ne peuvent pas être réemployés ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ils sont démontés si possible, puis orientés vers les filières de recyclage et de traitement adaptées. Rien n'est abandonné au hasard."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment donner ses meubles gratuitement en Meurthe-et-Moselle ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Envoyez-nous quelques photos et votre commune via le formulaire de contact. Si les meubles ou appareils peuvent être réemployés, nous convenons d'un rendez-vous et venons les chercher gratuitement chez vous, à Nancy comme dans le reste du département."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle différence entre une ressourcerie et une déchetterie ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La déchetterie trie les déchets pour les recycler ou les éliminer. Une ressourcerie comme REVALORYS cherche d'abord à prolonger la vie des objets : elle les collecte, les remet en état et les revend ou les redistribue. Seul ce qui ne peut vraiment pas être réemployé part en recyclage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment mettre en place une convention professionnelle ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Contactez-nous via le formulaire en choisissant « Professionnel ». Nous organisons un premier échange pour comprendre vos volumes et vos contraintes, puis nous vous adressons une proposition écrite."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -75,7 +326,7 @@
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__layout">
       <div class="hero__content">
-        <p class="eyebrow eyebrow--light reveal">Ressourcerie · Valorisation · Réemploi</p>
+        <p class="eyebrow eyebrow--light reveal">Ressourcerie solidaire · Meurthe-et-Moselle & Grand Est</p>
         <h1 class="hero__title reveal">Là où le déchet<br>devient <em>ressource.</em></h1>
         <p class="hero__lead reveal">Nous collectons gratuitement vos meubles, équipements et matériaux, nous les faisons remettre en état par nos artisans partenaires et nous leur offrons une seconde vie. Utile pour vous, utile pour le territoire.</p>
         <div class="hero__ctas reveal">
@@ -501,7 +752,7 @@
           </details>
           <details class="reveal">
             <summary>Dans quelle zone intervenez-vous&nbsp;?</summary>
-            <p>Nous intervenons en Meurthe-et-Moselle et dans le Grand Est. Pour les professionnels et les volumes importants, nous étudions toutes les demandes.</p>
+            <p>Nous intervenons dans toute la Meurthe-et-Moselle (Nancy et sa métropole, Lunéville, Toul, Pont-à-Mousson, le Pays-Haut…) et dans le Grand Est. Pour les professionnels et les volumes importants, nous étudions toutes les demandes.</p>
           </details>
           <details class="reveal">
             <summary>Dois-je être présent lors de l'enlèvement&nbsp;?</summary>
@@ -518,6 +769,14 @@
           <details class="reveal">
             <summary>Que deviennent les objets qui ne peuvent pas être réemployés&nbsp;?</summary>
             <p>Ils sont démontés si possible, puis orientés vers les filières de recyclage et de traitement adaptées. Rien n'est abandonné au hasard.</p>
+          </details>
+          <details class="reveal">
+            <summary>Comment donner ses meubles gratuitement en Meurthe-et-Moselle&nbsp;?</summary>
+            <p>Envoyez-nous quelques photos et votre commune via le formulaire de contact. Si les meubles ou appareils peuvent être réemployés, nous convenons d'un rendez-vous et venons les chercher gratuitement chez vous, à Nancy comme dans le reste du département.</p>
+          </details>
+          <details class="reveal">
+            <summary>Quelle différence entre une ressourcerie et une déchetterie&nbsp;?</summary>
+            <p>La déchetterie trie les déchets pour les recycler ou les éliminer. Une ressourcerie comme REVALORYS cherche d'abord à prolonger la vie des objets&nbsp;: elle les collecte, les remet en état et les revend ou les redistribue. Seul ce qui ne peut vraiment pas être réemployé part en recyclage.</p>
           </details>
           <details class="reveal">
             <summary>Comment mettre en place une convention professionnelle&nbsp;?</summary>

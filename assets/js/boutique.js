@@ -198,16 +198,75 @@
     }
   }
 
+  /* ---------- Référencement de la fiche (balises dynamiques) ---------- */
+  const SITE = "https://revalorys.fr";
+  const setMeta = (attr, key, value) => {
+    let m = document.head.querySelector(`meta[${attr}="${key}"]`);
+    if (!m) { m = document.createElement("meta"); m.setAttribute(attr, key); document.head.appendChild(m); }
+    m.setAttribute("content", value);
+  };
+  const setCanonical = (href) => {
+    let l = document.head.querySelector('link[rel="canonical"]');
+    if (!l) { l = document.createElement("link"); l.rel = "canonical"; document.head.appendChild(l); }
+    l.href = href;
+  };
+  const seoProduct = (p, who) => {
+    const url = `${SITE}/produit.html?ref=${encodeURIComponent(p.ref)}`;
+    const img = p.photo ? `${SITE}/${p.photo.replace(/^\//, "")}` : `${SITE}/assets/img/og-revalorys.jpg`;
+    const desc = `${p.titre} — ${p.etat || "remis en état"}, réparé à la main par ${who.nom.replace(/\.$/, "")}. ${p.resume || ""}`.trim().slice(0, 158);
+    setCanonical(url);
+    setMeta("name", "description", desc);
+    setMeta("property", "og:type", "product");
+    setMeta("property", "og:url", url);
+    setMeta("property", "og:title", `${p.titre} — Boutique REVALORYS`);
+    setMeta("property", "og:description", desc);
+    setMeta("property", "og:image", img);
+    setMeta("name", "twitter:title", `${p.titre} — Boutique REVALORYS`);
+    setMeta("name", "twitter:description", desc);
+    setMeta("name", "twitter:image", img);
+    const ld = document.createElement("script");
+    ld.type = "application/ld+json";
+    ld.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Product", name: p.titre, sku: p.ref, url, image: [img],
+          description: [p.resume, p.histoire].filter(Boolean).join(" "),
+          category: DATA.categories[p.categorie] || undefined,
+          brand: { "@type": "Brand", name: "REVALORYS" },
+          itemCondition: "https://schema.org/RefurbishedCondition",
+          offers: {
+            "@type": "Offer", url, priceCurrency: "EUR", price: Number(p.prix) || undefined,
+            itemCondition: "https://schema.org/RefurbishedCondition",
+            availability: p.statut === "disponible" ? "https://schema.org/InStock"
+              : p.statut === "reserve" ? "https://schema.org/LimitedAvailability" : "https://schema.org/SoldOut",
+            seller: { "@type": "Organization", name: "REVALORYS", url: SITE + "/" }
+          }
+        },
+        {
+          "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: SITE + "/" },
+            { "@type": "ListItem", position: 2, name: "Boutique", item: SITE + "/boutique.html" },
+            { "@type": "ListItem", position: 3, name: p.titre, item: url }
+          ]
+        }
+      ]
+    });
+    document.head.appendChild(ld);
+  };
+
   /* ---------- Fiche produit ---------- */
   const sheet = document.getElementById("productSheet");
   if (sheet) {
     const ref = new URLSearchParams(location.search).get("ref");
     const p = byRef(ref);
     if (!p) {
+      setMeta("name", "robots", "noindex, follow");
       sheet.innerHTML = `<div class="notfound"><h1>Objet introuvable</h1><p>Cette référence n'existe pas ou a été retirée de la boutique.</p><a href="boutique.html" class="btn btn--primary">Retour à la boutique</a></div>`;
     } else {
       const who = person(p);
       document.title = `${p.titre} — Boutique REVALORYS`;
+      seoProduct(p, who);
       const qr = `assets/img/qr/${p.ref}.svg`;
       const cta = p.statut === "disponible"
         ? `<button type="button" class="btn btn--accent btn--lg btn--block" data-add="${esc(p.ref)}"><span>Ajouter au panier</span></button>
