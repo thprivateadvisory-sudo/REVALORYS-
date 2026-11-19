@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Flyer REVALORYS — Lancement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+/* A5 = 148 x 210 mm + 3 mm de fond perdu de chaque côté = 154 x 216 mm.
+   Zone de sécurité : rien d'important à moins de 8 mm du bord du papier (bord du PDF). */
+@page { size: 154mm 216mm; margin: 0; }
+:root{
+  --navy:#0E2A47; --navy-d:#071728; --ochre:#C17C30; --ochre-l:#D39548;
+  --paper:#F3EEE6; --paper-2:#EAE2D5; --text:#2C3E52; --muted:#5E6F82;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#888}
+body{font-family:Inter,sans-serif;color:var(--text);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:154mm;height:216mm;position:relative;overflow:hidden;background:var(--paper);page-break-after:always;margin:0 auto}
+.page:last-child{page-break-after:auto}
+@media screen{ .page{margin:10mm auto;box-shadow:0 4px 30px rgba(0,0,0,.35)} }
+.safe{position:absolute;inset:11mm 12mm}
+
+/* grain papier, discret */
+.page::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .2 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ================= RECTO ================= */
+.top{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:2.6mm}
+.brand img.mark{height:9mm}
+.brand img.word{height:4.1mm}
+.kicker{font:600 2.55mm/1 Montserrat;letter-spacing:.32em;text-transform:uppercase;color:var(--ochre)}
+
+.stamp{position:absolute;right:12mm;top:10.5mm;width:29mm;height:29mm;transform:rotate(9deg);color:var(--ochre)}
+.stamp svg{width:100%;height:100%}
+
+h1{margin-top:15mm;font:900 12.6mm/0.96 Montserrat;color:var(--navy);letter-spacing:-.035em}
+h1 .soft{color:var(--navy);opacity:1}
+h1 .strike{position:relative;white-space:nowrap}
+h1 .strike svg{position:absolute;left:-1%;top:88%;width:100%;height:4mm;overflow:visible}
+.lede{margin-top:7mm;font:italic 500 5.4mm/1.25 Fraunces;color:var(--ochre)}
+.lede b{font-weight:600;color:var(--navy)}
+
+.steps{margin-top:6.5mm;border-top:.35mm solid var(--navy)}
+.step{display:grid;grid-template-columns:13mm 1fr;gap:2mm;padding:2.5mm 0;border-bottom:.2mm solid #CBBFAD}
+.step .n{font:800 7.4mm/1 Montserrat;color:var(--ochre);letter-spacing:-.04em}
+.step h3{font:800 3.75mm/1.2 Montserrat;color:var(--navy);text-transform:uppercase;letter-spacing:.02em}
+.step p{font:400 3.25mm/1.38 Inter;color:var(--text);margin-top:.8mm}
+
+.band{position:absolute;left:0;right:0;bottom:0;height:47mm;background:var(--navy);color:#fff}
+.band .in{position:absolute;left:12mm;right:12mm;top:6.5mm;bottom:10mm;display:flex;gap:7mm;align-items:center}
+.band .txt{flex:1}
+.band .eyebrow{font:600 2.5mm/1 Montserrat;letter-spacing:.3em;text-transform:uppercase;color:var(--ochre-l)}
+.band h2{font:800 6.1mm/1.08 Montserrat;margin-top:2.6mm;letter-spacing:-.015em}
+.band .contact{margin-top:4mm;font:500 3.5mm/1.55 Inter;color:#DCE4EE}
+.band .contact strong{color:#fff;font-weight:600}
+.qr{width:28mm;flex:none;text-align:center}
+.qr .tile{background:#fff;padding:2.4mm;border-radius:1.6mm}
+.qr svg{display:block;width:100%;height:auto}
+.qr span{display:block;margin-top:1.8mm;font:600 2.35mm/1.2 Montserrat;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre-l)}
+
+/* ================= VERSO ================= */
+.pro{margin-top:7mm;padding:4mm 4.2mm;background:var(--paper-2);border-left:1.2mm solid var(--ochre);border-radius:0 1.5mm 1.5mm 0}
+.pro .kicker{font-size:2.3mm}
+.pro p+p{margin-top:1.8mm;font:400 3mm/1.42 Inter}
+.pro b{color:var(--navy);font-weight:600}
+.v-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:.35mm solid var(--navy);padding-bottom:2.5mm}
+.v-head h2{font:900 7.6mm/1 Montserrat;color:var(--navy);letter-spacing:-.03em}
+.v-head .kicker{font-size:2.3mm}
+.list{display:grid;grid-template-columns:1fr 1fr;column-gap:7mm;margin-top:2.5mm}
+.list li{list-style:none;padding:2.25mm 0;border-bottom:.2mm solid #CBBFAD;font:400 3.15mm/1.3 Inter}
+.list li b{display:block;font:800 3.45mm/1.25 Montserrat;color:var(--navy);text-transform:uppercase;letter-spacing:.02em}
+.nope{margin-top:3mm;font:400 2.75mm/1.4 Inter;color:var(--muted)}
+.nope b{color:var(--navy);font-weight:600}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:8mm}
+.card{position:relative;border:.35mm dashed var(--navy);border-radius:2mm;padding:5.5mm 4.2mm 4.2mm}
+.card .tag{position:absolute;top:-2.6mm;left:3.5mm;background:var(--ochre);color:#fff;font:700 2.3mm/1 Montserrat;letter-spacing:.2em;text-transform:uppercase;padding:1.3mm 2mm;border-radius:.8mm}
+.card h3{font:800 4.55mm/1.12 Montserrat;color:var(--navy);letter-spacing:-.01em}
+.card p{margin-top:2.2mm;font:400 3mm/1.42 Inter}
+.card p b{color:var(--navy);font-weight:600}
+.card .go{margin-top:2.6mm;font:italic 600 3.2mm/1.2 Fraunces;color:var(--ochre)}
+
+.foot{position:absolute;left:0;right:0;bottom:0;height:44mm;background:var(--navy);color:#fff}
+.foot .in{position:absolute;left:12mm;right:12mm;top:6.5mm;bottom:8mm;display:flex;flex-direction:column;align-items:center;text-align:center}
+.foot img{height:13mm}
+.foot .slogan{margin-top:2.8mm;font:italic 500 4.4mm/1.2 Fraunces;color:var(--ochre-l)}
+.foot .c{margin-top:2.6mm;font:500 3.3mm/1.4 Inter;color:#DCE4EE}
+.foot .c strong{color:#fff;font-weight:600}
+.foot .legal{margin-top:auto;font:400 2.1mm/1.3 Inter;color:#8FA2B8;letter-spacing:.02em}
+</style>
+</head>
+<body>
+
+<!-- ======================= RECTO ======================= -->
+<section class="page">
+  <div class="stamp" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <defs><path id="c" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+      <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width=".8"/>
+      <text font-family="Montserrat" font-weight="700" font-size="8.6" letter-spacing="2.2" fill="currentColor">
+        <textPath href="#c">OUVERTURE PROCHAINE • MEURTHE-ET-MOSELLE •</textPath>
+      </text>
+      <text x="50" y="47" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="11.5" fill="currentColor" letter-spacing="-.3">BIENTÔT</text>
+      <text x="50" y="59" text-anchor="middle" font-family="Fraunces" font-style="italic" font-weight="600" font-size="9" fill="currentColor">chez vous</text>
+    </svg>
+  </div>
+
+  <div class="safe">
+    <div class="top">
+      <div class="brand">
+        <img class="mark" src="../../assets/img/logo-mark.png" alt="">
+        <img class="word" src="../../assets/img/logo-word.png" alt="REVALORYS">
+      </div>
+    </div>
+    <p class="kicker" style="margin-top:4mm">Ressourcerie · Valorisation · Réemploi</p>
+
+    <h1>Votre vieux buffet<br>n'a pas dit son<br><span class="strike">dernier mot.<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6 C 20 3.2, 46 7.4, 68 4.4 S 90 3, 97 5.5" fill="none" stroke="#C17C30" stroke-width="2.1" stroke-linecap="round" vector-effect="non-scaling-stroke" style="stroke-width:.9mm"/></svg></span></h1>
+
+    <p class="lede">Avant la déchèterie, pensez à nous.<br><b>REVALORYS</b> arrive en Meurthe-et-Moselle.</p>
+
+    <div class="steps">
+      <div class="step"><div class="n">01</div><div><h3>On vient le chercher</h3><p>Enlèvement gratuit de vos meubles, électroménager et matériaux encore utiles.</p></div></div>
+      <div class="step"><div class="n">02</div><div><h3>Un artisan d'ici le restaure</h3><p>Ébénistes, tapissiers, retraités passionnés&nbsp;: à la main, dans le Grand Est.</p></div></div>
+      <div class="step"><div class="n">03</div><div><h3>Il repart pour une seconde vie</h3><p>Revendu à prix juste, avec le nom de celui qui l'a remis en état.</p></div></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="in">
+      <div class="txt">
+        <p class="eyebrow">Dès maintenant</p>
+        <h2>Réservez votre<br>première collecte.</h2>
+        <p class="contact">
+          <strong>{{EMAIL}}</strong><br>
+          {{PHONE_LINE}}
+          <strong>{{SITE}}</strong>
+        </p>
+      </div>
+      <div class="qr">
+        <div class="tile">{{QR}}</div>
+        <span>Scannez-moi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= VERSO ======================= -->
+<section class="page">
+  <div class="safe">
+    <div class="v-head">
+      <h2>Ce qu'on reprend</h2>
+      <span class="kicker">Gratuitement</span>
+    </div>
+    <ul class="list">
+      <li><b>Mobilier</b>Tables, chaises, armoires, buffets, canapés</li>
+      <li><b>Électroménager</b>En état de marche</li>
+      <li><b>Équipement pro</b>Bureaux, sièges, rangements, matériel de commerce</li>
+      <li><b>Matériaux</b>Bois, portes, carrelage, surplus de chantier</li>
+      <li><b>Déco &amp; luminaires</b>Lampes, miroirs, cadres, vaisselle</li>
+      <li><b>Pièces de caractère</b>Meubles anciens, objets de collection</li>
+    </ul>
+    <p class="nope"><b>On ne reprend pas&nbsp;:</b> déchets dangereux, objets cassés ou incomplets, literie et textiles souillés. Un doute&nbsp;? Envoyez-nous une photo.</p>
+
+    <div class="duo">
+      <div class="card">
+        <span class="tag">On recrute</span>
+        <h3>Vous avez des mains en or&nbsp;?</h3>
+        <p>Artisan, bricoleur, retraité passionné&nbsp;: restaurez nos pièces chez vous. <b>50&nbsp;% du prix de vente</b> vous revient, et votre nom est signé sur la pièce.</p>
+        <p class="go">→ Rubrique « Artisans » sur le site</p>
+      </div>
+      <div class="card">
+        <span class="tag">Appel au don</span>
+        <h3>Un utilitaire qui dort au garage&nbsp;?</h3>
+        <p>Sans camionnette, pas de collecte. Offrez-la à REVALORYS&nbsp;: <b>votre nom sera inscrit dessus</b> et on s'occupe de toutes les démarches.</p>
+        <p class="go">→ Rubrique « Don de véhicule »</p>
+      </div>
+    </div>
+
+    <div class="pro">
+      <p class="kicker">Professionnels</p>
+      <p><b>Bailleurs, assurances, collectivités, EHPAD, entreprises&nbsp;:</b> convention sur mesure, interlocuteur unique, attestations et reporting RSE.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="in">
+      <img src="../../assets/img/logo-full-white.png" alt="REVALORYS">
+      <p class="slogan">Là où le déchet devient ressource.</p>
+      <p class="c"><strong>{{SITE}}</strong> · {{EMAIL}}{{PHONE_INLINE}}</p>
+      <p class="legal">Ne pas jeter sur la voie publique.{{PRINTER}}</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
