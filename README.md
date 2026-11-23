@@ -25,3 +25,8 @@ Pour une réception directe, brancher un service de formulaire (Formspree, Netli
 python3 -m http.server 8000
 ```
 puis ouvrir http://localhost:8000
+
+## Page « arrive bientôt » (pré-ouverture)
+Toutes les pages affichent une page d'attente protégée par mot de passe (`assets/js/gate.js`).
+- Changer le mot de passe : remplacer `HASH` par le résultat de `printf %s 'nouveau' | sha256sum`.
+- Lancer officiellement le site : passer `ENABLED` à `false` dans `assets/js/gate.js`.
